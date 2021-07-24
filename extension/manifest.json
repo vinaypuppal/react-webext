@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "react-webext",
+  "description": "[description]",
+  "version": "0.0.1",
+  "minimum_chrome_version": "10.0",
+  "browser_action": {
+    "default_icon": "./assets/icon-512.png",
+    "default_popup": "./dist/popup/index.html"
+  },
+  "background": {
+    "scripts": ["./dist/index.global.js"],
+    "persistent": true
+  },
+  "icons": {
+    "16": "./assets/icon-512.png",
+    "48": "./assets/icon-512.png",
+    "128": "./assets/icon-512.png"
+  },
+  "permissions": ["webRequest", "tabs", "http://*/*", "https://*/*"],
+  "content_security_policy": "script-src 'self' http://localhost:3303; object-src 'self'"
+}
